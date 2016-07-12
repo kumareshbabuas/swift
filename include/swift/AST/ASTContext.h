@@ -364,6 +364,11 @@ public:
   /// Retrieve the declaration of Swift.Error.
   NominalTypeDecl *getErrorDecl() const;
   CanType getExceptionType() const;
+
+  /// Note: only name of getErrorDecl(), used by LLDB.
+  NominalTypeDecl *getErrorProtocolDecl() const {
+    return getErrorDecl();
+  }
   
   /// Retrieve the declaration of Swift.Bool.
   NominalTypeDecl *getBoolDecl() const;
